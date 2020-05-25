@@ -25,6 +25,8 @@ cmake_minimum_required (VERSION 3.5)
 set (CMAKE_CXX_STANDARD 11)
 set (CMAKE_AUTOMOC ON)
 set (CMAKE_INCLUDE_CURRENT_DIR ON)
+# https://stackoverflow.com/questions/46949407/gperftools-profile-file-not-dumped
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--no-as-needed -lprofiler")
 
 if (NOT CMAKE_BUILD_TYPE)
   set (CMAKE_BUILD_TYPE Debug CACHE STRING
